@@ -1,0 +1,5 @@
+My program for part 3 calculates the Greatest Common Divisor (GCD) of 2 numbers, which is the largest number that divides both numbers.
+
+I structured the program by making the actual calculations a separate function so I can reuse it. In main(), the first thing I do is ask for 2 numbers and store them in two variables. I then pass those two variables into the GCD function, whose result I print out.
+
+I tested the program using inputs with known outputs, and had correct results with all the tests.
