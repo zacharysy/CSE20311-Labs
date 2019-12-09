@@ -1,0 +1,19 @@
+Zachary Sy 
+
+From the user's perspective, the program starts by asking for the file of state data. Then the user can choose from 5 different options (excluding exit):
+1. output the names of all the states 
+2. search for a state based on its name or abbreviation
+3. Get full information of a state given its abbreviation
+4. Finds the state with the greatest population
+5. Finds the state with the oldest founding year
+
+The State Class has a private variable for each of the given attributes, along with public getters and setters. There is only one useful constructor which takes all 6 inputs, but there is also an empty constructor with no parameters and an empty destructor. Lastly, there is an "info" method which can output either a short "concise" description, or the full description of the state.
+
+In statemain, the program first takes the CSV file per line and creates a instance of the State class from it, which is placed in a vector called "states". After, the same method used to present choices from the past labs was used. 
+
+The first two options uses a function called "searchState", which takes in a keyword as inputs and tries to match it with the names and abbreviations of the states in the "states" vector. The matches are then displayed using the state's info method. The first option passes an empty string as a keyword so all states are matched.
+
+The third option just takes an abbreviation as an input, loops through the "states" vector, then outputs that state's information using State.info(). 
+
+The fourth and fifth option just loops through the "states" vector and compares either the population or founding year, storing the desired state in a variable. After the loop completes, the state is then outputted.
+

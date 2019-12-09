@@ -1,0 +1,5 @@
+From the user's perspective, the program displays an ASCII art of an equation in an interval.
+
+Internally, the program is a for loop from the minimum to the maximum x value. In each iteration, the function at a certain point x is calculated and then the x and y values are displayed. A horizontal bar equal to the y value multiplied by some constant (so it will fit the terminal window) is then displayed to make the ASCII art.
+
+I verified the program was correct by plotting it online using Desmos

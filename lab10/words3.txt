@@ -1,0 +1,7 @@
+heineborel
+weierstrauss
+hessian
+jacobian
+banach
+cauchy
+bolzano

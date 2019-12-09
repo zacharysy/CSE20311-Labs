@@ -1,0 +1,7 @@
+From the user's perspective, the program prompts for an integer to determine what operation to perform. If the integer value is not in the number of options, the program will prompt again. If the input is not a number, the program halts. An input of 5 will also exit the program. When a valid non-exit input is given, the user would then be prompted to input two numbers that the selected operation will be performed with. The answer is then displayed and the user is prompted to calculate again.
+
+Internally, the program works by using a while loop which calls an "ask" function as its exit condition. This function first asks for a choice of operation to perform. If the user choice is 5 or is not an integer, the function returns a "false" which halts the while loop. If the user chooses an operation, they will be prompted for two numbers using "cin".
+
+A switch-case block is then used to determine which operation the user wants performed, which then calls the appropriate function which displays the equality of the operation. The last line of the "ask" function then returns a true in order to start the while loop again.
+
+I verified the output is correct by comparing with the given example and using a calculator.

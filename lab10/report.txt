@@ -1,0 +1,13 @@
+Zachary Sy
+
+From the user's perspective there are three ways to start the program based on the number of Command Line arguments passed. If no argument is given, then the progam will prompt the user for words until they enter a '.' or they enter 20 words. The first optional argument is a filename of words separated by newlines. These words are then processed to make sure they are valid, and then a crossword is printed out, containing the solution, the empty crossword, and clues.  The third optional argument is a filename to write this output into a text file. 
+
+From the programming perspective, taking input is the same as the past few labs so I won't go through it. 
+
+The Crossboard class is the main class that handles all the crosswording. The input--whether from user input or from the file--is placed in a vector, which is then passed to the Crossboard::init method. The first thing the method does is validate that the words are valid and don't contain illegal characters. If a word is too long, too short, or contains illegal characters, then it would be removed. Once that is done, the array is sorted in ascending order and then passed into the Crossboard::orderWords method to be placed into the board. The first thing this method does is place the longest word at the center of the board. Then, the method goes through each word in descending order and tries to place it on the board. If the word cannot be placed on the board, the program will attempt to move the previous word to a different position until the word can be placed. If all this fails, the second to largest word is removed and the program attempts to place the words again. Once all the words that can be placed is placed, then the program outputs the solution, puzzle and clues.
+
+To make coding easier, most method returns an Error struct, which contains two variables, a bool 'success' and a string 'message'. If the error is a 'success', then that means that whatever I wanted to get done was done. If the error 'success' is false, then I can read the resulting 'message' to identify the problem.
+
+I also added a simple Position enum to keep track of if words are down or across.
+
+words are stored in a Word struct, which keeps track of the word, its starting row, starting column, and its Position. Also, there is an 'offset' int to keep track of which out of multiple options on the board the word is placed at.

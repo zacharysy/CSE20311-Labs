@@ -1,0 +1,27 @@
+Zachary Sy
+
+From the user's perspective: the program can be either run with or without a filename command line argument. If no filename is given, the board is initialized as empty. The user then has options to add a cell, remove a cell, advance to the next generation, continuously play, or exit. If a filename of commands is given, the program executes the commands and does not prompt for any user input. 
+
+From the programming perspective: The program has 3 files, two files (lifeboard.h and lifeboard.cpp) for the Lifeboard class, and one file (life.cpp) to manage playing the game. Lifeboard has two properties: a 2D boolean vector of "cells" which is "true" when alive and "false" when dead, and an int to keep track of the number of iterations. Aside from constructors and destructors, Lifeboard has five methods: 
+
+void addCell(int x, int y);
+void removeCell(int x, int y);
+void advance();
+void display();
+vector<int> checkAdjacents(int row, int col);
+
+addCell() takes the row and column value, checks if it is valid, then makes the corresponding cells[x][y] value to true. removeCell() is exactly the same except it makes cells[x][y] false. advance() creates a copy of the cells vector called newCells, then checks every cell in the cells vector and evaluates its adjacent cells using checkAdjacents() and updates the value in newCells. After each cell is checked, the value of cells is changed to newCells. checkAdjacents() takes in a row and column of a cell, then checks each adjacent cell, keeping track of the dead and living cells. display() clears the screen, prints a border, then prints out each cell, "X" representing a living cell and " " reperesenting a dead cell.
+
+Game of Life Objects Used:
+	Block
+	Loaf
+	Boat
+	Tub
+	Blinker
+	Caterer
+	Figure Eight
+	Unix
+	Glider
+	Lightweight Spaceship
+	Copperhead
+	Gosper's Gattling Gun

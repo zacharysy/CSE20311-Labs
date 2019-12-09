@@ -1,0 +1,84 @@
+// Zachary Sy
+// State Class
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include "state.h"
+
+using namespace std;
+
+
+State::State(){
+}
+
+State::State(string abbv, string name, string capital, int pop, int year, int repCount){
+	(*this).abbv = abbv;
+	(*this).name = name;
+	(*this).capital = capital;
+	(*this).pop = pop;
+	(*this).foundYear = year;
+	(*this).repCount = repCount;
+}
+
+State::~State(){
+}
+		
+string State::getAbbv(){
+	return abbv;
+}
+
+string State::getName(){
+	return name;
+}
+
+string State::getCapital(){
+	return capital;
+}
+
+int State::getPopulation(){
+	return pop;
+}
+
+int State::getRepCount(){
+	return repCount;
+}
+
+int State::getFoundYear(){
+	return foundYear;
+}
+		
+void State::setAbbv(string newAbbv){
+	abbv = newAbbv;
+}
+
+void State::setName(string newName){
+	name = newName;
+}
+
+void State::setCapital(string newCapital){
+	capital = newCapital;
+}
+
+void State::setPopulation(int newPop){
+	pop = newPop;
+}
+
+void State::setRepCount(int newCount){
+	repCount = newCount;
+}
+
+void State::setFoundYear(int newYear){
+	foundYear = newYear;
+}
+		
+void State::info(bool concise){
+	if(concise){
+		cout << name << " (" << abbv << ")" << endl;
+	}else{
+		cout << "[" << abbv << "] " << name  << " (est. " << foundYear << ")"<< endl;
+	cout << "Capital: " << capital << endl;
+	cout << "Population Count: " << pop << endl;
+	cout << "Number of Representatives in Congress: " << repCount << endl;
+	}
+}

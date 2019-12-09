@@ -1,0 +1,15 @@
+Zachary Sy :D
+
+From the users perspective, the program first asks for the startup file. After, the user is prompted to choose from the following choices:
+	"1. Display All Sayings"
+	"2. Enter a New Saying"
+	"3. Search For Sayings"
+	"4. Save All Sayings"
+	"5. Quit The Program"
+After a choice is made, the program asks for relevant inputs (for example if they picked 2, the input would be the new saying), and outputs the appropriate output. The choices are then displayed again until "5" is chosen
+	
+Internally, the startup works by asking for a filename to check for, and "ifstream" is used to actually read the file. It then returns the vector containing all the lines of the startup text file. The choices works the same as the past two labs, so I assume I don't have to repeat how that works. All of the choice functions take the vector containing the sayings as input. All are passed by value, except for choice "2", which is passed by reference so a new vector doesn't need to be saved.
+
+"dispAll" iterates through all the lines of the sayings vector and "cout"ing them. "addSayings" takes the sayings vector and "push_back" the new line. "findSayings" iterates through the sayings vector and "cout"s it if it contains the substring (which I check using "find"). "saveSayings" uses "ofstream" to output the vector to a text file.
+
+I used my "dispAll" function to verify that "addSayings" works. To check that "saveSayings" worked, I "cat" the resulting text file. To verify that "findSayings" worked, I added a specific string with "addSaying", then tried to "find" it.
